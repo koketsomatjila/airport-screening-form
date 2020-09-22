@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traveller Health Form</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+
+  <div class="container">
+    <header class="header">
+      <!--<img class= "doh" src="img\SA-Department-of-Health-Logo.jpg" alt="doh" >
+      <img class= "ndp" src="img\ndp2030img.png" alt="ndp" > -->
+      <h1 id="title" class="text-center">
+        TRAVELLER HEALTH QUESTIONNAIRE - EXIT FROM SOUTH AFRICA
+      </h1>
+    </header>
+
+    <form onload="show()" id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name and Surname</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          onkeyup="nameFunction()"
+          class="form-control"
+          placeholder="Enter your name and surname"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="date-label" for="date">Date of Birth</label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="nationality-label" for="nationality">Nationality</label>
+        <input
+          type="text"
+          name="nationality"
+          id="nationality"
+          class="form-control"
+          placeholder="Enter your nationality"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="passport-label" for="passport"
+          >Passport No. for non-RSA Citizens / ID No. for RSA Citizens</label
+        >
+        <input
+          type="text"
+          name="passport"
+          id="passport"
+          class="form-control"
+          placeholder="Enter your passport / ID number"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="birthplace-label" for="birthplace"
+          >City and Country of Origin (for non-RSA)</label
+        >
+        <input
+          type="text"
+          name="birthplace"
+          id="birthplace"
+          class="form-control"
+          placeholder="Enter your city and country of origin"
+        />
+      </div>
+      <div class="form-group">
+        <label id="arrival-label" for="arrival"
+          >Date of Arrival in RSA (for non-RSA citizens)
+        </label>
+        <input type="date" name="arrival" id="arrival" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label id="departure-label" for="departure"
+          >Date of departure from South Africa
+        </label>
+        <input
+          type="date"
+          name="departure"
+          id="departure"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="citytravel-label" for="citytravel"
+          >City and Country travelling to</label
+        >
+        <input
+          type="text"
+          name="citytravel"
+          id="citytravel"
+          class="form-control"
+          placeholder="Enter the city and country"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="vesselno-label" for="vesselno"
+          >Flight/ Vessel/ Bus/ Vehicle Number</label
+        >
+        <input
+          type="text"
+          name="vesselno"
+          id="vesselno"
+          class="form-control"
+          placeholder="xxxxxxx"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="seat-label" for="seat">Seat Number</label>
+        <input
+          type="text"
+          name="seat"
+          id="seat"
+          class="form-control"
+          placeholder="xxxxxxx"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="tel-label" for="tel"
+          >Telephone Number at destination (incl. country code)</label
+        >
+        <input
+          type="tel"
+          name="tel"
+          id="tel"
+          class="form-control"
+          placeholder="+1234567890"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="othertel-label" for="othertel"
+          >Other Contact Number in RSA / WhatsApp Number (incl. country
+          code)</label
+        >
+        <input
+          type="tel"
+          name="othertel"
+          id="othertel"
+          class="form-control"
+          placeholder="+1234567890"
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="email-label" for="email">Email Address</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter email address"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label id="desAddress-label" for="desAddress"
+          >Physical Address/es at Destination</label
+        >
+        <textarea
+          name="desAddress"
+          id="desAddress"
+          rows="6"
+          cols="400"
+          placeholder="Enter all addresses if multiple destinations"
+          required
+        >
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label id="saAddress-label" for="saAddress"
+          >Physical Address/es during stay in South Afrrica</label
+        >
+        <textarea
+          name="saAddress"
+          id="saAddress"
+          rows="6"
+          cols="400"
+          placeholder="Enter all addresses if multiple destinations"
+          required
+        >
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label id="visitarea-label" for="visitarea"
+          >List of areas visited during stay in South Africa, including list of
+          provinces</label
+        >
+        <textarea
+          name="visitarea"
+          id="visitarea"
+          rows="6"
+          cols="400"
+          placeholder="Enter list of areas including provinces"
+          required
+        >
+        </textarea>
+      </div>
+
+      <div class="form-group2">
+        <fieldset>
+          <legend>Are you travelling in a group?</legend>
+
+          <label for="groupyes"
+            ><input type="radio" name="group" id="groupyes" value="Yes" />
+             Yes</label
+          >
+          <label for="groupno">
+            <input type="radio" name="group" id="groupno" value="No" />
+            No</label
+          >
+
+          <label id="yesgroup-label" for="yesgroup"
+            >If "Yes" Enter number in group</label
+          >
+          <input
+            type="number"
+            name="yesgroup"
+            id="yesgroup"
+            placeholder="Enter Group of people"
+            min="0"
+          />
+        </fieldset>
+      </div>
+      <br><br>
+      
+<h3 id="notify"> If the traveller answers "yes" to any of the following questions, please notify Port Health authorities immediately</h3>
+<br><fieldset>   
+<div class="form-group2">
+  
+    <label>Have you been in contact with a confirmed or suspected case of COVID-19</label>
+
+    <label for="covidyes"
+      ><input type="radio" name="covid" id="covidyes" value="Yes" />
+       Yes</label
+    >
+    <label for="covidno">
+      <input type="radio" name="covid" id="covidno" value="No" />
+      No</label
+    >
+     <label for="coviddunno">
+      <input type="radio" name="covid" id="coviddunno" value="Don't know" />
+      Don't know</label
+    >
+<br><hr><br>
+<label>Have you been to an event with >50 people in the last 14 days?</label>
+
+<label for="eventyes"
+  ><input type="radio" name="event" id="eventyes" value="Yes" />
+   Yes</label
+>
+<label for="eventno">
+  <input type="radio" name="event" id="eventno" value="No" />
+  No</label
+>
+     <label id="event-label" for="event"
+      >If "Yes" please indicate venue and date </label
+    >
+    <textarea
+          name="event"
+          id="event"
+          rows="4"
+          cols="400"
+          placeholder="Enter venue and date"
+        
+        >
+        </textarea><br><br><hr><br>
+
+<label>Have you had fever in the last 14 days?</label>
+
+    <label for="feveryes"
+      ><input type="radio" name="fever" id="feveryes" value="Yes" />
+       Yes</label
+    >
+    <label for="feverno">
+      <input type="radio" name="fever" id="feverno" value="No" />
+      No</label
+    >
+     <label for="feverdunno">
+      <input type="radio" name="fever" id="feverdunno" value="Don't know" />
+      Don't know</label
+    >
+    <br><hr><br>
+    <label>Have you had a cough in the last 14 days?</label>
+
+    <label for="coughyes"
+      ><input type="radio" name="cough" id="coughyes" value="Yes" />
+       Yes</label
+    >
+    <label for="coughno">
+      <input type="radio" name="cough" id="coughno" value="No" />
+      No</label
+    >
+     <label for="coughdunno">
+      <input type="radio" name="cough" id="coughdunno" value="Don't know" />
+      Don't know</label>
+
+      <br><hr><br>
+      <label>Have you had difficulty breathing in the last 14 days?</label>
+  
+      <label for="breatheyes"
+        ><input type="radio" name="breathe" id="breatheyes" value="Yes" />
+         Yes</label
+      >
+      <label for="breatheno">
+        <input type="radio" name="breathe" id="breatheno" value="No" />
+        No</label
+      >
+       <label for="breathedunno">
+        <input type="radio" name="breathe" id="breathedunno" value="Don't know" />
+        Don't know</label>
+ </fieldset>
+<br>
+
+<h3> All sections are compulsory and should be completed </h3>
+<br>
+<label for="declare">
+  <input type="checkbox" name="declare" id="declare" value="true" />
+  I<u><p id="nameinput" ></p></u>certify that the above information is true and correct</label><br>
+  <div class="form-group">
+    <button type="submit" id="submit" class="submit-button" required>Submit</button>
+  </div>
+<br>
+<h3>Key Contact information:</h3> <a href="https:www.health.gov.za" target="_blank" ><h4>NDOH website</h4></a> <a href="https:www.nicd.ac.za" target="_blank"><h4>NICD website</h4></a>
+
+<script src="form.js"></script> 
+    </form>
+  </div>
+</html>
